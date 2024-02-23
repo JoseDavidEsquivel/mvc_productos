@@ -5,12 +5,14 @@
 
 table, th, td {
     border: 1px solid black;
+    
+    font-size: 6px;
 }
   
 .content{
     display: flex;
     justify-content: center;
-    background-color: aqua;
+    background-color: blue;
 
     padding-bottom: 3px;
     padding-top: 3px;
