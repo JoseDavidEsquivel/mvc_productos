@@ -2,8 +2,22 @@ $def with (content)
 <html>
 <head>
     <title>Productos</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/base.css">
 </head>
-<body>
-$:content
+<body class="body_container">
+<section>
+    <!-- Este contenedor servira para el encabezado de la pagina donde esta tendra links directos hacia otras paginas (podria ser redundante en caso de estarlo pero eh how cares) -->
+    <div>
+        <div class="header_title">Productos</div>
+        <div class="header_links">
+            <a href="/insertar"> Insertar Producto</a>
+            <a href="/documentacion">Ver Documentacion</a>
+        </div>
+    </div> 
+    <div class="content">
+        $:content
+    </div>
+</section>
 </body>
 </html>

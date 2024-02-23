@@ -1,0 +1,29 @@
+.header_title{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(94, 43, 43);
+    width: 100%;
+
+    padding-bottom: 1px;
+    padding-top: 1px;
+    
+    /* Confs fuente */
+    font-size: 20px;
+    color: white;
+}
+
+.header_links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    background-color: rgba(165, 42, 42, 0.097);
+
+    padding-bottom: 1px;
+    padding-top: 1px;
+
+    margin-bottom: 5px;
+
+    /* Confs fuente */
+    font-size: 12px;
+}

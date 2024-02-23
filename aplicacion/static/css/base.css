@@ -1,0 +1,17 @@
+.body_container{
+    background-color: white;
+    justify-content: center;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+  
+.content{
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
