@@ -7,7 +7,9 @@ urls = (
     '/insertar', 'mvc.controllers.insertar_productos.Insertar',
     '/actualizar', 'mvc.controllers.actualizar_productos.Actualizar',
     '/borrar', 'mvc.controllers.borrar_productos.Borrar',
-    '/detalle', 'mvc.controllers.detalle_productos.Detalle'
+    '/detalle', 'mvc.controllers.detalle_productos.Detalle',
+    '/documentacion', 'mvc.controllers.documentacion.Documentacion',
+    '/buscar', 'mvc.controllers.buscar_productos.Buscar'
     )
 
 app = web.application(urls, globals())

@@ -4,6 +4,7 @@ $def with (content)
     <title>Productos</title>
     <link rel="stylesheet" type="text/css" href="/static/css/header.css">
     <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bottom.css">
 </head>
 <body class="body_container">
 <section>
@@ -12,11 +13,16 @@ $def with (content)
         <div class="header_title">Productos</div>
         <div class="header_links">
             <a href="/insertar"> Insertar Producto</a>
+            <a href="/">Ir al Menu</a>
+            <a href="/buscar">Buscar</a>
             <a href="/documentacion">Ver Documentacion</a>
         </div>
     </div> 
     <div class="content">
         $:content
+    </div>
+    <div class="bottom">
+        contacto
     </div>
 </section>
 </body>
