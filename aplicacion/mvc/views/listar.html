@@ -1,14 +1,21 @@
+$def with (response)
+
 <table>
     <tr>
+        <th>Id</th>
         <th>Nombre</th>
-        <th>Teléfono</th>
-        <th>Correo</th>
+        <th>Descripcion</th>
+        <th>Precio</th>
+        <th>Existencias</th>
+        <th>Opciones</th>
     </tr>
+    $for producto in response:
         <tr>
-            <td>kjldfskjl</td>
-            <td>kmdskl</td>
-            <td>lddkdkdkdkdkdcccc</td>
+            <td>$producto['id']</td>
+            <td>$producto['nombre']</td>
+            <td>$producto['descripcion']</td>
+            <td>$producto['precio']</td>
+            <td>$producto['existencias']</td>
+            <td>Opciones</td>
         </tr>
 </table>
-
-<p>Hola mundo</p>
