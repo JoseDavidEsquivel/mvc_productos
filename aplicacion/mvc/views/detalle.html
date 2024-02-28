@@ -1,1 +1,20 @@
-detalle
+$def with (response)
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Precio</th>
+        <th>Existencias</th>
+    </tr>
+    $for producto in response:
+        <tr>
+            <td>$producto['id']</td> <!-- Incluimos el parámetro de consulta id en el enlace -->
+            <td>$producto['nombre']</td>
+            <td>$producto['descripcion']</td>
+            <td>$producto['precio']</td>
+            <td>$producto['existencias']</td>
+        </tr>
+</table>
+<a href="javascript:history.back()">Volver atrás</a>

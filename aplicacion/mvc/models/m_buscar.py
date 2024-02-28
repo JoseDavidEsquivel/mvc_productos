@@ -25,8 +25,6 @@ class BuscarProductos:
             if valores[i] == "":
                 valores[i] = "%"  # Reemplaza los valores nulos por "%"
 
-        print(valores)
-
         # Construcción de la consulta SQL
         query = "SELECT * FROM productos WHERE id LIKE %s AND nombre LIKE %s  AND descripcion LIKE %s AND precio LIKE %s AND existencias LIKE %s LIMIT 25"
         
@@ -38,7 +36,7 @@ class BuscarProductos:
         listado = []
         for row in productos:
             temp_descripcion = row[2]
-            descripcion_trunca = temp_descripcion[:50]
+            descripcion_trunca = temp_descripcion[:100]
             producto = {
                 'id': row[0],
                 'nombre': row[1],
@@ -47,7 +45,7 @@ class BuscarProductos:
                 'existencias': row[4]
             }
             listado.append(producto)
-        print(listado)
+        # print(listado)
         # Convertir a formato JSON
         return listado
 

@@ -75,15 +75,16 @@ class ModeloProductos:
 
         response = []
         for row in productos:
+            temp_descripcion = row[2]
+            descripcion_trunca = temp_descripcion[:100]
             producto = {
                 'id': row[0],
                 'nombre': row[1],
-                'descripcion': row[2],
+                'descripcion': descripcion_trunca,
                 'precio': row[3],
                 'existencias': row[4]
             }
             response.append(producto)
-
         # Convertir a formato JSON
         productos_json = response
         return productos_json

@@ -32,14 +32,15 @@ $def with (listado)
         </tr>
         $for producto in listado:
             <tr>
-                <td>$producto['id']</td>
+                <td><a href="/detalle?id=${producto['id']}">$producto['id']</a></td> <!-- Utilizamos el ID del producto actual -->
                 <td>$producto['nombre']</td>
                 <td>$producto['descripcion']</td>
                 <td>$producto['precio']</td>
                 <td>$producto['existencias']</td>
-                <td>Opciones</td>
+                <td><a href="/actualizar?id=${producto['id']}"><button>Hola</button></a></td>
             </tr>
     </table>
+    <a href="/">Volver atrás</a>
 </div>
 
 

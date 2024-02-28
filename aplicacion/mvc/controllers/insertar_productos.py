@@ -4,7 +4,7 @@ from mvc.models.m_insertar import InsertarProductos
 render = web.template.render('mvc/views/', base='layout')
 
 class Insertar:
-    def GET(self, mensaje = "dsdsdsdsds" ):
+    def GET(self, mensaje = "" ):
          # Definir mensaje aquí o de donde sea apropiado
         return render.insertar(mensaje)
 
