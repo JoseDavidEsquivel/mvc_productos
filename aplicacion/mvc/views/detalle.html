@@ -1,20 +1,29 @@
 $def with (response)
 
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Nombre</th>
-        <th>Descripcion</th>
-        <th>Precio</th>
-        <th>Existencias</th>
-    </tr>
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Existencias</th>
+        </tr>
+    </thead>
+
+    <tbody class="table-group-divider">
     $for producto in response:
         <tr>
-            <td>$producto['id']</td> <!-- Incluimos el parámetro de consulta id en el enlace -->
+            <td scope="row">$producto['id']</td> <!-- Utilizamos el ID del producto actual -->
             <td>$producto['nombre']</td>
             <td>$producto['descripcion']</td>
             <td>$producto['precio']</td>
             <td>$producto['existencias']</td>
         </tr>
+    </tbody>
+
 </table>
-<a href="javascript:history.back()">Volver atrás</a>
+<div style="display: flex; justify-content: center;">
+    <a href="/"><button class="btn btn-primary">Volver al Menu</button></a>
+</div>

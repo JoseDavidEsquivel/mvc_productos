@@ -1,1 +1,42 @@
-borrar
+$def with (response)
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Existencias</th>
+        </tr>
+    </thead>
+
+    <tbody class="table-group-divider">
+    $for producto in response:
+        <tr>
+            <td scope="row">$producto['id']</td> <!-- Utilizamos el ID del producto actual -->
+            <td>$producto['nombre']</td>
+            <td>$producto['descripcion']</td>
+            <td>$producto['precio']</td>
+            <td>$producto['existencias']</td>
+        </tr>
+    </tbody>
+
+</table>
+<div style="display: flex; justify-content: center;">
+    <form action="/borrar" method="post" onsubmit="return confirmDelete()">
+        <input type="hidden" name="id" value="${producto['id']}"/>
+        <button type="submit" class="btn btn-danger">Borrar</button>
+    </form>
+</div>
+
+<div style="display: flex; justify-content: center;">
+    <a href="/"><button class="btn btn-primary">Volver al Menu</button></a>
+</div>
+
+<script>
+    function confirmDelete() {
+        return confirm('¿Estás seguro de que quieres borrar este producto?');
+    }
+</script>

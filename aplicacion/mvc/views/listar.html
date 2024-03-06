@@ -1,21 +1,33 @@
 $def with (response)
 
-<table>
-    <tr>
-        <th>Id</th>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Precio</th>
-        <th>Existencias</th>
-        <th>Opciones</th>
-    </tr>
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Existencias</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+
+    <tbody class="table-group-divider">
     $for producto in response:
         <tr>
-            <td><a href="/detalle?id=${producto['id']}">$producto['id']</a></td> <!-- Utilizamos el ID del producto actual -->
+            <td scope="row"><a href="/detalle?id=${producto['id']}">$producto['id']</a></td> <!-- Utilizamos el ID del producto actual -->
             <td>$producto['nombre']</td>
             <td>$producto['descripcion']</td>
             <td>$producto['precio']</td>
             <td>$producto['existencias']</td>
-            <td><a href="/actualizar?id=${producto['id']}"><button>Hola</button></a></td>
+            <td><a href="/actualizar?id=${producto['id']}"><button class="btn btn-warning">Actualizar</button></a></td>
+            <td><a href="/borrar?id=${producto['id']}"><button class="btn btn-danger">Borrar</button></a></td>
         </tr>
+    </tbody>
 </table>
+
+<div style="display: flex; justify-content: center;">
+    <a href="/"><button class="btn btn-primary">Volver al Menu</button></a>
+</div>

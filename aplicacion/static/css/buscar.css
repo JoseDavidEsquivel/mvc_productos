@@ -1,0 +1,22 @@
+.form_productos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.form_productos form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form_container{
+    display: flex;
+    flex-direction: row;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.form_button{
+    display: flex;
+    justify-content: center;
+}

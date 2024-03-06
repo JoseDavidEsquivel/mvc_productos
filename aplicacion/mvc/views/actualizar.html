@@ -1,43 +1,66 @@
-$def with (mensaje,response)
+$def with (response)
+
+<link rel="stylesheet" type="text/css" href="/static/css/buscar.css">
+
+
+    <div class="form_productos">
+        $for producto in response:
+            <form method="post">
+                <div class="mb-3">
+                    <label for="nombre2">Producto:</label>
+                    <input type="text" id="nombre2" name="nombre2" required value="${producto['nombre']}">
+                    <br>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="descripcion2">Descripción:</label>
+                    <input type="text" id="descripcion2" name="descripcion2" required value="${producto['descripcion']}">
+                    <br>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="precio2">Precio:</label>
+                    <input type="number" id="precio2" name="precio2" required value="${producto['precio']}">
+                    <br>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="existencias2">Existencias:</label>
+                    <input type="number" id="existencias2" name="existencias2" required value="${producto['existencias']}">
+                    <br>
+                </div>
+                
+                <div class="form_button">
+                    <input class="btn btn-primary" type="submit" value="Actualizar">
+                </div>
+            </form>
+    </div>
 <div>
-    $for producto in response:
-        <form method="post">
-            <label for="nombre2">Producto:</label>
-            <input type="text" id="nombre2" name="nombre2"required value="${producto['nombre']}">
-            <br>
-            <label for="descripcion2">Descripción:</label>
-            <input type="text" id="descripcion2" name="descripcion2"required value="${producto['descripcion']}">
-            <br>
-            <label for="precio2">Precio:</label>
-            <input type="number" id="precio2" name="precio2"required value="${producto['precio']}">
-            <br>
-            <label for="existencias2">Existencias:</label>
-            <input type="number" id="existencias2" name="existencias2" required value="${producto['existencias']}">
-            <br>
-            <input type="submit" value="Insertar">
-        </form>
-    <p>$mensaje</p>
-    <a href="javascript:history.back()">Volver atrás</a>
-</div>
-<div>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Precio</th>
-            <th>Existencias</th>
-        </tr>
+    <table class="table table-striped">
+
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Existencias</th>
+            </tr>
+        </thead>
+
+        <tbody class="table-group-divider">
         $for producto in response:
             <tr>
-                <td>$producto['id']</td> <!-- Incluimos el parámetro de consulta id en el enlace -->
+                <td scope="row">$producto['id']</td> <!-- Utilizamos el ID del producto actual -->
                 <td>$producto['nombre']</td>
                 <td>$producto['descripcion']</td>
                 <td>$producto['precio']</td>
                 <td>$producto['existencias']</td>
             </tr>
-    </table>
-    <a href="javascript:history.back()">Volver atrás</a>
-    
+        </tbody>
 
+</table>
+</div>
+<div style="display: flex; justify-content: center;">
+    <a href="/"><button class="btn btn-primary">Volver al Menu</button></a>
 </div>
