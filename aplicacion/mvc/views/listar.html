@@ -1,33 +1,34 @@
-$def with (response)
+$def with (productos, page)
 
+    <table class="table table-striped">
 
-<table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Existencias</th>
+                <th scope="col">Opciones</th>
+            </tr>
+        </thead>
 
-    <thead>
-        <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Descripción</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Existencias</th>
-            <th scope="col">Opciones</th>
-        </tr>
-    </thead>
+        <tbody class="table-group-divider">
+        $for producto in productos:
+            <tr>
+                <td scope="row"><a href="/detalle?id=${producto['id']}">$producto['id']</a></td> <!-- Utilizamos el ID del producto actual -->
+                <td>$producto['nombre']</td>
+                <td>$producto['descripcion']</td>
+                <td>$producto['precio']</td>
+                <td>$producto['existencias']</td>
+                <td><a href="/actualizar?id=${producto['id']}"><button class="btn btn-warning">Actualizar</button></a></td>
+                <td><a href="/borrar?id=${producto['id']}"><button class="btn btn-danger">Borrar</button></a></td>
+            </tr>
+        </tbody>
+    </table>
 
-    <tbody class="table-group-divider">
-    $for producto in response:
-        <tr>
-            <td scope="row"><a href="/detalle?id=${producto['id']}">$producto['id']</a></td> <!-- Utilizamos el ID del producto actual -->
-            <td>$producto['nombre']</td>
-            <td>$producto['descripcion']</td>
-            <td>$producto['precio']</td>
-            <td>$producto['existencias']</td>
-            <td><a href="/actualizar?id=${producto['id']}"><button class="btn btn-warning">Actualizar</button></a></td>
-            <td><a href="/borrar?id=${producto['id']}"><button class="btn btn-danger">Borrar</button></a></td>
-        </tr>
-    </tbody>
-</table>
-
-<div style="display: flex; justify-content: center;">
-    <a href="/"><button class="btn btn-primary">Volver al Menu</button></a>
-</div>
+    <div style="display: flex; justify-content: center;">
+        <a href="?page=${page-1 if page>1 else 1}"><button class="btn btn-primary">Anterior</button></a>
+        <a href="?page=${page+1}"><button class="btn btn-primary">Siguiente</button></a>
+        <a href="/"><button class="btn btn-primary">Volver al Menu</button></a>
+    </div>

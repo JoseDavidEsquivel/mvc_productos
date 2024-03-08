@@ -11,7 +11,7 @@
 
 .form_container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -19,4 +19,8 @@
 .form_button{
     display: flex;
     justify-content: center;
+}
+
+.container-label {
+    display: flex; flex-direction: column;
 }

@@ -3,38 +3,38 @@ $def with (response)
 <link rel="stylesheet" type="text/css" href="/static/css/buscar.css">
 
 
-    <div class="form_productos">
-        $for producto in response:
-            <form method="post">
-                <div class="mb-3">
-                    <label for="nombre2">Producto:</label>
-                    <input type="text" id="nombre2" name="nombre2" required value="${producto['nombre']}">
-                    <br>
-                </div>
-                
-                <div class="mb-3">
-                    <label for="descripcion2">Descripción:</label>
-                    <input type="text" id="descripcion2" name="descripcion2" required value="${producto['descripcion']}">
-                    <br>
-                </div>
-                
-                <div class="mb-3">
-                    <label for="precio2">Precio:</label>
-                    <input type="number" id="precio2" name="precio2" required value="${producto['precio']}">
-                    <br>
-                </div>
-                
-                <div class="mb-3">
-                    <label for="existencias2">Existencias:</label>
-                    <input type="number" id="existencias2" name="existencias2" required value="${producto['existencias']}">
-                    <br>
-                </div>
-                
-                <div class="form_button">
-                    <input class="btn btn-primary" type="submit" value="Actualizar">
-                </div>
-            </form>
-    </div>
+<div class="form_productos">
+    $for producto in response:
+        <form method="post">
+            <div class="mb-3">
+                <label for="nombre2">Producto:</label>
+                <input type="text" id="nombre2" name="nombre2" required value="${producto['nombre']}">
+                <br>
+            </div>
+            
+            <div class="mb-3">
+                <label for="descripcion2">Descripción:</label>
+                <input type="text" id="descripcion2" name="descripcion2" required value="${producto['descripcion']}">
+                <br>
+            </div>
+            
+            <div class="mb-3">
+                <label for="precio2">Precio:</label>
+                <input type="number" id="precio2" name="precio2" required value="${producto['precio']}">
+                <br>
+            </div>
+            
+            <div class="mb-3">
+                <label for="existencias2">Existencias:</label>
+                <input type="number" id="existencias2" name="existencias2" required value="${producto['existencias']}">
+                <br>
+            </div>
+            
+            <div class="form_button">
+                <input class="btn btn-primary" type="submit" value="Actualizar">
+            </div>
+        </form>
+</div>
 <div>
     <table class="table table-striped">
 
