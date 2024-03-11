@@ -22,7 +22,11 @@ class Actualizar:
         nombre = form.nombre2
         descripcion = form.descripcion2
         precio = form.precio2
+        if float(precio) < 0:
+            precio = 0
         existencias = form.existencias2
+        if int(existencias) < 0:
+            existencias = 0
         # print(id, nombre, descripcion, precio, existencias)
         actualizar_controller.actualizar_productos(id, nombre, descripcion, precio, existencias)
         detalle_controller = DetalleProductos()
