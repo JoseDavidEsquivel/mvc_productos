@@ -1,11 +1,12 @@
-$def with (response)
+$def with (response, mensaje)
 
 <link rel="stylesheet" type="text/css" href="/static/css/buscar.css">
+<script src="/static/js/validacion.js"></script>
 
 
 <div class="form_productos">
     $for producto in response:
-        <form method="post">
+        <form method="post" enctype="multipart/form-data" onsubmit="return validarFormulario()">
             <div class="mb-3">
                 <label for="nombre2">Producto:</label>
                 <input type="text" id="nombre2" name="nombre2" required value="${producto['nombre']}">
@@ -19,14 +20,20 @@ $def with (response)
             </div>
             
             <div class="mb-3">
-                <label for="precio2">Precio:</label>
-                <input type="number" id="precio2" name="precio2" required value="${producto['precio']}">
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" name="precio" required value="${producto['precio']}">
                 <br>
             </div>
             
             <div class="mb-3">
-                <label for="existencias2">Existencias:</label>
-                <input type="number" id="existencias2" name="existencias2" required value="${producto['existencias']}">
+                <label for="existencias">Existencias:</label>
+                <input type="number" id="existencias" name="existencias" required value="${producto['existencias']}">
+                <br>
+            </div>
+
+            <div class="mb-3">
+                <label for="imagen">Imagen:</label>
+                <input type="file" id="imagen" name="imagen">
                 <br>
             </div>
             
@@ -56,11 +63,13 @@ $def with (response)
                 <td>$producto['descripcion']</td>
                 <td>$producto['precio']</td>
                 <td>$producto['existencias']</td>
+                <td><img src="/static/images/${producto['imagen_nombre']}${producto['imagen_extension']}" alt="Imagen del producto" style="max-width: 100px; max-height: 100px;"></td>
             </tr>
         </tbody>
 
 </table>
 </div>
+$mensaje
 <div style="display: flex; justify-content: center;">
     <a href="/"><button class="btn btn-primary">Volver al Menu</button></a>
 </div>

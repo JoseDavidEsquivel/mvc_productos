@@ -25,12 +25,15 @@ class DetalleProductos:
                 'nombre': row[1],
                 'descripcion': row[2],
                 'precio': row[3],
-                'existencias': row[4]
+                'existencias': row[4],
+                'imagen_nombre': row[5],
+                'imagen_extension': row[6]
             }
             listado.append(producto)
         # Convertir a formato JSON
+        print(listado)
         return listado
-
+    
     def close_connection(self):
         self.cursor.close()
         self.conn.close()

@@ -52,11 +52,12 @@ $def with (listado)
         <tbody class="table-group-divider">
         $for producto in listado:
             <tr>
-                <td scope="row"><a href="/detalle?id=${producto['id']}">$producto['id']</a></td> <!-- Utilizamos el ID del producto actual -->
-                <td>$producto['nombre']</td>
-                <td>$producto['descripcion']</td>
-                <td>$producto['precio']</td>
-                <td>$producto['existencias']</td>
+                <td scope="row"><a href="/detalle?id=${producto['id_encoded']}">${producto['id']}</a></td>
+                <td>${producto['nombre']}</td>
+                <td>${producto['descripcion']}</td>
+                <td>${producto['precio']}</td>
+                <td>${producto['existencias']}</td>
+                <td><img src="/static/images/${producto['imagen_nombre']}${producto['imagen_extension']}" alt="Imagen del producto" style="max-width: 100px; max-height: 100px;"></td>
                 <td><a href="/actualizar?id=${producto['id']}"><button class="btn btn-warning">Actualizar</button></a></td>
                 <td><a href="/borrar?id=${producto['id']}"><button class="btn btn-danger">Borrar</button></a></td>
             </tr>

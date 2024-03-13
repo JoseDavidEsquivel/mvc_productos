@@ -12,8 +12,8 @@ class ModeloProductos:
         self.cursor = self.conn.cursor()
 
     def listar_productos(self, page):
-        offset = (page - 1) * 25
-        self.cursor.execute("SELECT * FROM productos LIMIT 25 OFFSET %s", (offset,))
+        offset = (page - 1) * 15
+        self.cursor.execute("SELECT * FROM productos LIMIT 15 OFFSET %s", (offset,))
         productos = self.cursor.fetchall()
 
         response = []
@@ -25,7 +25,9 @@ class ModeloProductos:
                 'nombre': row[1],
                 'descripcion': descripcion_trunca,
                 'precio': row[3],
-                'existencias': row[4]
+                'existencias': row[4],
+                'imagen_nombre': row[5],
+                'imagen_extension': row[6]
             }
             response.append(producto)
         # Convertir a formato JSON

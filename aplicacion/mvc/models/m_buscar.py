@@ -26,7 +26,7 @@ class BuscarProductos:
                 valores[i] = "%"  # Reemplaza los valores nulos por "%"
 
         # Construcción de la consulta SQL
-        query = "SELECT * FROM productos WHERE id LIKE %s AND nombre LIKE %s  AND descripcion LIKE %s AND precio LIKE %s AND existencias LIKE %s LIMIT 25"
+        query = "SELECT * FROM productos WHERE id LIKE %s AND nombre LIKE %s  AND descripcion LIKE %s AND precio LIKE %s AND existencias LIKE %s LIMIT 40"
         
         # Ejecutar la consulta
         self.cursor.execute(query, valores)
@@ -42,11 +42,14 @@ class BuscarProductos:
                 'nombre': row[1],
                 'descripcion': descripcion_trunca,
                 'precio': row[3],
-                'existencias': row[4]
+                'existencias': row[4],
+                'imagen_nombre': row[5],
+                'imagen_extension': row[6]
             }
             listado.append(producto)
         # print(listado)
         # Convertir a formato JSON
+        print(listado)
         return listado
 
 

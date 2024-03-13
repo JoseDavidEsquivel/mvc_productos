@@ -10,14 +10,11 @@ class ActualizarProductos:
         )
         self.cursor = self.conn.cursor()
 
-    def actualizar_productos(self, id, nombre, descripcion, precio, existencias):
-        # Incluir el id en los valores, al final, porque se usará en la cláusula WHERE
-        valores = [nombre, descripcion, precio, existencias, id]
+    def actualizar_productos(self, id, nombre, descripcion, precio, existencias, imagen_nombre, imagen_extension):
 
-        # Construcción de la consulta SQL para actualizar
-        query = "UPDATE productos SET nombre = %s, descripcion = %s, precio = %s, existencias = %s WHERE id = %s"
+        valores = [nombre, descripcion, precio, existencias, imagen_nombre, imagen_extension, id]
+        query = "UPDATE productos SET nombre = %s, descripcion = %s, precio = %s, existencias = %s, imagen_nombre = %s,imagen_extension = %s WHERE id = %s"
 
-        # Ejecutar la consulta
         self.cursor.execute(query, valores)
         mensaje = 'Producto actualizado correctamente'
         self.conn.commit()
