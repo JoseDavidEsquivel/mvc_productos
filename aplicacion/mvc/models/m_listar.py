@@ -12,8 +12,8 @@ class ModeloProductos:
         self.cursor = self.conn.cursor()
 
     def listar_productos(self, page):
-        offset = (page - 1) * 15
-        self.cursor.execute("SELECT * FROM productos LIMIT 15 OFFSET %s", (offset,))
+        offset = (page - 1) * 25
+        self.cursor.execute("SELECT * FROM productos LIMIT 25 OFFSET %s", (offset,))
         productos = self.cursor.fetchall()
 
         response = []

@@ -1,6 +1,8 @@
 $def with (listado)
 <link rel="stylesheet" type="text/css" href="/static/css/buscar.css">
 
+<div style="display: flex; justify-content: center; padding-bottom: 20px;"><h1>Buscar Producto</h1></div>
+
 <div class="form_productos">
     <form method="post">
             <div class="mb-3">
@@ -45,6 +47,7 @@ $def with (listado)
                 <th scope="col">Descripción</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Existencias</th>
+                <th scope="col">Imagen</th>
                 <th scope="col">Opciones</th>
             </tr>
         </thead>
@@ -58,8 +61,8 @@ $def with (listado)
                 <td>${producto['precio']}</td>
                 <td>${producto['existencias']}</td>
                 <td><img src="/static/images/${producto['imagen_nombre']}${producto['imagen_extension']}" alt="Imagen del producto" style="max-width: 100px; max-height: 100px;"></td>
-                <td><a href="/actualizar?id=${producto['id']}"><button class="btn btn-warning">Actualizar</button></a></td>
-                <td><a href="/borrar?id=${producto['id']}"><button class="btn btn-danger">Borrar</button></a></td>
+                <td><a href="/actualizar?id=${producto['id_encoded']}"><button class="btn btn-warning">Actualizar</button></a></td>
+                <td><a href="/borrar?id=${producto['id_encoded']}"><button class="btn btn-danger">Borrar</button></a></td>
             </tr>
         </tbody>
     

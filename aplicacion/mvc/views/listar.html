@@ -1,8 +1,14 @@
 $def with (productos, page)
+<div style="display: flex; justify-content: center; padding-bottom: 20px;"><h1>Listar Producto</h1></div>
+
 <div style="display: flex; justify-content: center; padding-bottom: 10px;">
     <a href="?page=${page-1 if page>1 else 1}"><button class="btn btn-primary">Anterior</button></a>
+    <div style="width: 300px; display: flex; justify-content: center;align-items: center;">
+        <p>Pagina $page</p>
+    </div>
     <a href="?page=${page+1}"><button class="btn btn-primary">Siguiente</button></a>
 </div>
+
 
 <table class="table table-striped">
 
@@ -27,14 +33,17 @@ $def with (productos, page)
             <td>${producto['precio']}</td>
             <td>${producto['existencias']}</td>
             <td><img src="/static/images/${producto['imagen_nombre']}${producto['imagen_extension']}" alt="Imagen del producto" style="max-width: 100px; max-height: 100px;"></td>
-            <td><a href="/actualizar?id=${producto['id']}"><button class="btn btn-warning">Actualizar</button></a></td>
-            <td><a href="/borrar?id=${producto['id']}"><button class="btn btn-danger">Borrar</button></a></td>
+            <td><a href="/actualizar?id=${producto['id_encoded']}"><button class="btn btn-warning">Actualizar</button></a></td>
+            <td><a href="/borrar?id=${producto['id_encoded']}"><button class="btn btn-danger">Borrar</button></a></td>
         </tr>
     </tbody>
 </table>
 
     <div style="display: flex; justify-content: center; padding-bottom: 10px;">
         <a href="?page=${page-1 if page>1 else 1}"><button class="btn btn-primary">Anterior</button></a>
+        <div style="width: 300px; display: flex; justify-content: center;align-items: center;">
+            <p>Pagina $page</p>
+        </div>
         <a href="?page=${page+1}"><button class="btn btn-primary">Siguiente</button></a>
     </div>
     <div style="display: flex; justify-content: center;">

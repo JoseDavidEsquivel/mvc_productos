@@ -31,7 +31,6 @@ class DetalleProductos:
             }
             listado.append(producto)
         # Convertir a formato JSON
-        print(listado)
         return listado
     
     def close_connection(self):

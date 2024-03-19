@@ -1,4 +1,5 @@
 $def with (response)
+<div style="display: flex; justify-content: center; padding-bottom: 20px;"><h1>Borrar Producto</h1></div>
 
 <table class="table table-striped">
 
@@ -9,6 +10,7 @@ $def with (response)
             <th scope="col">Descripción</th>
             <th scope="col">Precio</th>
             <th scope="col">Existencias</th>
+            <th scope="col">Imagen</th>
         </tr>
     </thead>
 
@@ -20,6 +22,7 @@ $def with (response)
             <td>$producto['descripcion']</td>
             <td>$producto['precio']</td>
             <td>$producto['existencias']</td>
+            <td><img src="/static/images/${producto['imagen_nombre']}${producto['imagen_extension']}" alt="Imagen del producto" style="max-width: 250px; max-height: 250px;"></td>
         </tr>
     </tbody>
 

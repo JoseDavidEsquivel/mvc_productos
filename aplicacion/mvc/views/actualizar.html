@@ -1,4 +1,5 @@
 $def with (response, mensaje)
+<div style="display: flex; justify-content: center; padding-bottom: 20px;"><h1>Actualizar Producto</h1></div>
 
 <link rel="stylesheet" type="text/css" href="/static/css/buscar.css">
 <script src="/static/js/validacion.js"></script>
@@ -15,7 +16,7 @@ $def with (response, mensaje)
             
             <div class="mb-3">
                 <label for="descripcion2">Descripción:</label>
-                <input type="text" id="descripcion2" name="descripcion2" required value="${producto['descripcion']}">
+                <input type="area" id="descripcion2" name="descripcion2" required value="${producto['descripcion']}">
                 <br>
             </div>
             
@@ -52,6 +53,7 @@ $def with (response, mensaje)
                 <th scope="col">Descripción</th>
                 <th scope="col">Precio</th>
                 <th scope="col">Existencias</th>
+                <th scope="col">Imagen</th>
             </tr>
         </thead>
 
@@ -63,7 +65,7 @@ $def with (response, mensaje)
                 <td>$producto['descripcion']</td>
                 <td>$producto['precio']</td>
                 <td>$producto['existencias']</td>
-                <td><img src="/static/images/${producto['imagen_nombre']}${producto['imagen_extension']}" alt="Imagen del producto" style="max-width: 100px; max-height: 100px;"></td>
+                <td><img src="/static/images/${producto['imagen_nombre']}${producto['imagen_extension']}" alt="Imagen del producto" style="max-width: 200px; max-height: 200px;"></td>
             </tr>
         </tbody>
 

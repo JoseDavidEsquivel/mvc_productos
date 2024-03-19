@@ -18,12 +18,12 @@ class Buscar:
         existencias = form.existencias
         # existencias = ""
         listado = listar_controller.buscar_productos(id, nombre, descripcion, precio, existencias)
-        print(listado)
+        # print(listado)
 
         for producto in listado:
             producto['id_encoded'] = encode_id(producto['id'])
 
-        print(listado[0]['id_encoded'])
+        # print(listado[0]['id_encoded'])
         
         return render.buscar(listado=listado)  # Pasar el listado obtenido de la búsqueda a la vista
 
